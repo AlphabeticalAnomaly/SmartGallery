@@ -15,6 +15,7 @@ jobs:
       - name: cdk deploy
         uses: youyo/aws-cdk-github-actions@v2
         with:
+            working-directory: cdk/
             cdk_subcommand: 'deploy'
             cdk_stack: 'SmartGalleryStack'
             cdk_args: '--require-approval never'
