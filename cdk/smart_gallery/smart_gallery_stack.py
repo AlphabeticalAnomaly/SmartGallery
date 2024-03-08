@@ -15,7 +15,7 @@ class SmartGalleryStack(Stack):
         gallery_lambda = lambda_.Function(self, "GalleryLambda",
                                           handler='lambda_function.lambda_handler',
                                           runtime=lambda_.Runtime.PYTHON_3_8,
-                                          code=lambda_.Code.from_asset(path="./lambda_code/src"),
+                                          code=lambda_.Code.from_asset(path="../lambda_code/src"),
                                           )
 
         bucket = s3.Bucket(self, "GalleryBucket", bucket_name="gallerybucket1241210")
