@@ -1,6 +1,6 @@
 import aws_cdk as core
 import aws_cdk.assertions as assertions
-from smart_gallery.smart_gallery_stack import SmartGalleryStack
+from cdk.smart_gallery.smart_gallery_stack import SmartGalleryStack
 
 
 def test_synthesizes_properly():

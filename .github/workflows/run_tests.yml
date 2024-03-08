@@ -12,9 +12,9 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v3
       - name: install dependencies
-        run: pip install -r requirements-dev.txt
+        run: pip install -r cdk/requirements-dev.txt
       - name: Test handler
-        working-directory: src/
+        working-directory: lambda_code/src/
         run: python3 -m unittest test_handler.TestHandler
       - name: Test Cdk Synth
-        run: python3 -m unittest tests/cdk_tests/test_smart_gallery_stack.py
+        run: python3 -m unittest cdk/tests/cdk_tests/test_smart_gallery_stack.py
