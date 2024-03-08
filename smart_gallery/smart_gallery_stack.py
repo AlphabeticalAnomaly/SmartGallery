@@ -34,3 +34,4 @@ class SmartGalleryStack(Stack):
                                            proxy=False)
         root_resource = api.root
         root_resource.add_method("POST")
+
