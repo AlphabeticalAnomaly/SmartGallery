@@ -9,16 +9,13 @@ on:
 jobs:
   aws_cdk:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: cdk/
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
       - name: cdk deploy
         uses: youyo/aws-cdk-github-actions@v2
         with:
-            cdk_subcommand: 'deploy'
+            cdk_subcommand: 'deploy --app cdk/app.py'
             cdk_stack: 'SmartGalleryStack'
             cdk_args: '--require-approval never'
             actions_comment: false
