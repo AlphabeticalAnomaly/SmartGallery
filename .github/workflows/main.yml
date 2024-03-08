@@ -1,0 +1,22 @@
+name: Deploy aws stack on git push
+on:
+  workflow_run:
+    workflows: [ run_tests ]
+    types:
+      - completed
+  push:
+    branches: [master]
+jobs:
+  aws_cdk:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+      - name: cdk deploy
+        uses: youyo/aws-cdk-github-actions@v2
+        with:
+            cdk_subcommand: 'deploy'
+            cdk_stack: 'SmartGalleryStack'
+            cdk_args: '--require-approval never'
+            actions_comment: false
+            cdk_version: 2.114.1
