@@ -12,9 +12,6 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
-      - name: Lambda layer setup
-        working-directory: lambda_code/layers/
-        run: python3 layer_autodeploy.py
       - name: cdk deploy
         uses: youyo/aws-cdk-github-actions@v2
         with:
