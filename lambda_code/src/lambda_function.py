@@ -27,6 +27,3 @@ def lambda_handler(event, context):
         return awsgi.response(app, event, context)
     except Exception as e:
         return jsonify(status=500, message="The server encountered an error.")
-
-
-

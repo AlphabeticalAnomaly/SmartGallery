@@ -5,13 +5,16 @@ on:
     types:
       - completed
   push:
-    branches: [master]
+    branches: [api_s3]
 jobs:
   aws_cdk:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
+      - name: Lambda layer setup
+        working-directory: lambda_code/layers/
+        run: python3 layer_autodeploy.py
       - name: cdk deploy
         uses: youyo/aws-cdk-github-actions@v2
         with:

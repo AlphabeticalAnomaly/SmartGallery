@@ -20,5 +20,3 @@ class TestHandler(unittest.TestCase):
         awsgi.response.side_effect = Exception
         response = lambda_handler(event=self.event, context=self.context)
         mock.assert_called_with(status=500, message="The server encountered an error.")
-
-
