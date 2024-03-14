@@ -17,10 +17,10 @@ class SmartGalleryStack(Stack):
         gallery_lambda = lambda_.Function(self, "GalleryLambda",
                                           handler='lambda_function.lambda_handler',
                                           runtime=lambda_.Runtime.PYTHON_3_8,
-                                          code=lambda_.Code.from_asset(path="./lambda_code/src"),
+                                          code=lambda_.Code.from_asset(path="../lambda_code/src"),
                                           layers=[lambda_.LayerVersion(self, "MyLayer",
                                                                        code=lambda_.Code.from_asset(
-                                                                           path="./lambda_code/layers/layer.zip"))
+                                                                           path="../lambda_code/layers/layer.zip"))
                                                   ],
                                           )
 
