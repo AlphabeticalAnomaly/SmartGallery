@@ -12,10 +12,7 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v3
       - name: install dependencies
-        run: pip install -r cdk/requirements-dev.txt
-      - name: Lambda layer setup
-        working-directory: lambda_code/layers/
-        run: python3 layer_autodeploy.py
+        run: pip install -r lambda_code/requirements-dev.txt
       - name: Test handler
         working-directory: lambda_code/src/
         run: python3 -m unittest test_handler.TestHandler

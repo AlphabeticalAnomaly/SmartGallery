@@ -1,0 +1,4 @@
+boto3~=1.34.29
+Flask~=3.0.2
+aws-wsgi~=0.2.7
+aws-cdk-lib==2.112.0
